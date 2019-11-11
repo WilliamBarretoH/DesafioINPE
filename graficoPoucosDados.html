@@ -1,0 +1,249 @@
+<html>
+   <head>
+      <title>Data INPE</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+      <script src = "https://code.highcharts.com/highcharts.js"></script> 
+   </head>
+   
+   <body>
+      <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto"></div>
+      <script language = "JavaScript">
+
+var dados = [
+            
+            {
+              "comp_bt": 3.53, 
+              "comp_bx": 1.28, 
+              "comp_by": 2.73, 
+              "comp_bz": -1.83, 
+              "density": 6.18, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:00:00"
+              }, 
+              "lat_gsm": -31.36, 
+              "lon_gsm": 64.95, 
+              "speed": 390.2, 
+              "temperature": 71640.0
+            }, 
+            {
+              "comp_bt": 3.56, 
+              "comp_bx": 1.08, 
+              "comp_by": 2.77, 
+              "comp_bz": -1.96, 
+              "density": 3.67, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:01:00"
+              }, 
+              "lat_gsm": -33.5, 
+              "lon_gsm": 68.67, 
+              "speed": 372.0, 
+              "temperature": 31840.0
+            }, 
+            {
+              "comp_bt": 3.52, 
+              "comp_bx": 1.03, 
+              "comp_by": 2.78, 
+              "comp_bz": -1.91, 
+              "density": 6.87, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:02:00"
+              }, 
+              "lat_gsm": -32.74, 
+              "lon_gsm": 69.65, 
+              "speed": 394.1, 
+              "temperature": 94546.0
+            }, 
+            {
+              "comp_bt": 3.59, 
+              "comp_bx": 0.99, 
+              "comp_by": 2.91, 
+              "comp_bz": -1.87, 
+              "density": 6.06, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:03:00"
+              }, 
+              "lat_gsm": -31.31, 
+              "lon_gsm": 71.13, 
+              "speed": 384.4, 
+              "temperature": 63146.0
+            }, 
+            {
+              "comp_bt": 3.6, 
+              "comp_bx": 1.2, 
+              "comp_by": 2.72, 
+              "comp_bz": -2.04, 
+              "density": 5.32, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:04:00"
+              }, 
+              "lat_gsm": -34.5, 
+              "lon_gsm": 66.24, 
+              "speed": 370.9, 
+              "temperature": 27611.0
+            }, 
+            {
+              "comp_bt": 3.63, 
+              "comp_bx": 1.47, 
+              "comp_by": 2.53, 
+              "comp_bz": -2.15, 
+              "density": 5.72, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:05:00"
+              }, 
+              "lat_gsm": -36.35, 
+              "lon_gsm": 59.86, 
+              "speed": 378.2, 
+              "temperature": 44576.0
+            }, 
+            {
+              "comp_bt": 3.67, 
+              "comp_bx": 0.83, 
+              "comp_by": 2.86, 
+              "comp_bz": -2.13, 
+              "density": 6.59, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:06:00"
+              }, 
+              "lat_gsm": -35.6, 
+              "lon_gsm": 73.89, 
+              "speed": 387.0, 
+              "temperature": 72799.0
+            }, 
+            {
+              "comp_bt": 3.46, 
+              "comp_bx": 1.72, 
+              "comp_by": 2.25, 
+              "comp_bz": -1.98, 
+              "density": 5.2, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:07:00"
+              }, 
+              "lat_gsm": -34.92, 
+              "lon_gsm": 52.54, 
+              "speed": 378.6, 
+              "temperature": 48860.0
+            }, 
+            {
+              "comp_bt": 3.33, 
+              "comp_bx": 2.34, 
+              "comp_by": 1.65, 
+              "comp_bz": -1.71, 
+              "density": 5.22, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:08:00"
+              }, 
+              "lat_gsm": -30.82, 
+              "lon_gsm": 35.17, 
+              "speed": 385.9, 
+              "temperature": 66223.0
+            }, 
+            {
+              "comp_bt": 3.26, 
+              "comp_bx": 2.56, 
+              "comp_by": 1.26, 
+              "comp_bz": -1.57, 
+              "density": 6.41, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:09:00"
+              }, 
+              "lat_gsm": -28.86, 
+              "lon_gsm": 26.12, 
+              "speed": 397.1, 
+              "temperature": 94610.0
+            }, 
+            {
+              "comp_bt": 3.27, 
+              "comp_bx": 2.45, 
+              "comp_by": 1.24, 
+              "comp_bz": -1.78, 
+              "density": 6.0, 
+              "id": {
+                "date": "2019-11-05", 
+                "time": "00:10:00"
+              }, 
+              "lat_gsm": -32.88, 
+              "lon_gsm": 26.96, 
+              "speed": 381.9, 
+              "temperature": 51236.0
+            }
+            ];
+
+let yDensity = dados.map(d => d.density)        
+let yCompBT = dados.map(d => d.comp_bt)
+let yCompBX = dados.map(d => d.comp_bx)
+let x = dados.map(d => d.id.time)
+//var eixoY = []
+
+
+         $(document).ready(function() {
+            var title = {
+               text: 'DesafioINPE, dados espaciais'   
+            };
+            var subtitle = {
+               text: 'Source: http://teste-inpe.herokuapp.com/'
+            };
+            var xAxis = {
+               categories: x
+            };
+            var yAxis = {
+               title: {
+                  text: 'Temperature (\xB0C)'
+               },
+               plotLines: [{
+                  value: 0,
+                  width: 1,
+                  color: '#808080'
+               }]
+            };   
+            var tooltip = {
+               valueSuffix: '\xB0C'
+            }
+            var legend = {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle',
+               borderWidth: 0
+            };
+            var series = [{
+              nome: 'compbx',
+              data: yCompBX},
+              {
+                nome:'compbt',
+                data:yCompBT
+              },
+              {
+                nome:'density',
+                data:yDensity
+              }
+              ]
+
+            var json = {};
+            json.title = title;
+            json.subtitle = subtitle;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.series = series;
+
+            console.log(xAxis)
+            console.log(series)
+            
+            
+            $('#container').highcharts(json);
+         });
+      </script>
+   </body>
+   
+</html>
