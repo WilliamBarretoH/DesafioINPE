@@ -1,0 +1,82 @@
+<html>
+   <head>
+      <title>Data INPE</title>
+      <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+      <script src = "https://code.highcharts.com/highcharts.js"></script> 
+   </head>
+   
+   <body>
+      <div id = "container" style = "width: 1000px; height: 800px; margin: 0 auto"></div>
+      <script language = "JavaScript">
+
+$.get("http://localhost:5000/dado",function(dados) {
+
+let yDensity = dados.map(d => d.density)        
+let yCompBT = dados.map(d => d.comp_bt)
+let yCompBX = dados.map(d => d.comp_bx)
+let x = dados.map(d => d.id.time)
+//var eixoY = []
+
+
+         $(document).ready(function() {
+            var title = {
+               text: 'DesafioINPE, dados espaciais'   
+            };
+            var subtitle = {
+               text: 'Source: http://teste-inpe.herokuapp.com/'
+            };
+            var xAxis = {
+               categories: x
+            };
+            var yAxis = {
+               title: {
+                  text: 'Temperature (\xB0C)'
+               },
+               plotLines: [{
+                  value: 0,
+                  width: 1,
+                  color: '#808080'
+               }]
+            };   
+            var tooltip = {
+               valueSuffix: '\xB0C'
+            }
+            var legend = {
+               layout: 'vertical',
+               align: 'right',
+               verticalAlign: 'middle',
+               borderWidth: 0
+            };
+            var series = [{
+              nome: 'compbx',
+              data: yCompBX},
+              {
+                nome:'compbt',
+                data:yCompBT
+              },
+              {
+                nome:'density',
+                data:yDensity
+              }
+              ]
+
+            var json = {};
+            json.title = title;
+            json.subtitle = subtitle;
+            json.xAxis = xAxis;
+            json.yAxis = yAxis;
+            json.tooltip = tooltip;
+            json.legend = legend;
+            json.series = series;
+
+            console.log(xAxis)
+            console.log(series)
+            
+            
+            $('#container').highcharts(json);
+         })});
+      </script>
+   </body>
+   
+</html>
